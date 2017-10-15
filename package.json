@@ -1,0 +1,23 @@
+{
+  "name": "baky-kola",
+  "version": "1.0.0",
+  "scripts": {
+    "start:server": "node server/express-server",
+    "start:client": "budo client/main.js:bundle.js --pushstate --dir client/public --live",
+    "prebuild": "cp -r client/public/ dist",
+    "build": "browserify ./client/main.js -o ./client/dist/bundle.js -t [ babelify --presets [ env ] ]"
+  },
+  "keywords": [
+    "tram-one"
+  ],
+  "dependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "budo": "^10.0.4",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "jasmine": "^2.8.0",
+    "tram-one": "^2.0.0"
+  }
+}
